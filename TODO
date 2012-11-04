@@ -1,0 +1,9 @@
+- general clean-up
+- add #ifdefs for switch threading
+- reinstate the various #ifdefs I removed from EvalFrameEx()
+- fix line tracing
+- restore certain macro calls in ceval.vmg
+- port to Python 2.6
+- and so forth...
+
+// eof

@@ -1,0 +1,131 @@
+PyBench on an Athlon64 X2 3800+. Reference.py is the output of a Python 2.5.2
+compiled from source with configure && make.
+
+
+
+$ ./python Tools/pybench/pybench.py -c ../reference.pybench 
+-------------------------------------------------------------------------------
+PYBENCH 2.0
+-------------------------------------------------------------------------------
+* using Python 2.5.2
+* disabled garbage collection
+* system check interval set to maximum: 2147483647
+* using timer: time.time
+
+Calibrating tests. Please wait...
+
+Running 10 round(s) of the suite at warp factor 10:
+
+* Round 1 done in 4.953 seconds.
+* Round 2 done in 4.882 seconds.
+* Round 3 done in 4.923 seconds.
+* Round 4 done in 4.897 seconds.
+* Round 5 done in 4.927 seconds.
+* Round 6 done in 4.964 seconds.
+* Round 7 done in 4.916 seconds.
+* Round 8 done in 4.935 seconds.
+* Round 9 done in 4.932 seconds.
+* Round 10 done in 4.959 seconds.
+
+-------------------------------------------------------------------------------
+Benchmark: 2008-10-22 13:30:28
+-------------------------------------------------------------------------------
+
+    Rounds: 10
+    Warp:   10
+    Timer:  time.time
+
+    Machine Details:
+       Platform ID:  Linux-2.6.24.1-x86_64-with-debian-4.0
+       Processor:    
+    
+    Python:
+       Executable:   /home/j/FROB/VPython/python
+       Version:      2.5.2
+       Compiler:     GCC 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)
+       Bits:         64bit
+       Build:        Oct 22 2008 13:28:14 (#r252:60911)
+       Unicode:      UCS2
+
+
+-------------------------------------------------------------------------------
+Comparing with: ../reference.pybench
+-------------------------------------------------------------------------------
+
+    Rounds: 10
+    Warp:   10
+    Timer:  time.time
+
+    Machine Details:
+       Platform ID:  Linux-2.6.24.1-x86_64-with-debian-4.0
+       Processor:    
+    
+    Python:
+       Executable:   /home/j/FROB/CPython/python
+       Version:      2.5.2
+       Compiler:     GCC 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)
+       Bits:         64bit
+       Build:        Oct 22 2008 13:21:36 (#r252:60911)
+       Unicode:      UCS2
+
+
+Test                             minimum run-time        average  run-time
+                                 this    other   diff    this    other   diff
+-------------------------------------------------------------------------------
+          BuiltinFunctionCalls:   104ms   126ms  -17.3%   110ms   128ms  -14.0%
+           BuiltinMethodLookup:    98ms   136ms  -27.9%   100ms   139ms  -28.1%
+                 CompareFloats:    59ms   121ms  -51.1%    60ms   123ms  -50.7%
+         CompareFloatsIntegers:    67ms   121ms  -45.0%    73ms   136ms  -46.7%
+               CompareIntegers:    57ms   157ms  -63.7%    58ms   161ms  -64.1%
+        CompareInternedStrings:    55ms   143ms  -61.6%    57ms   161ms  -64.5%
+                  CompareLongs:    56ms   122ms  -54.0%    61ms   141ms  -56.7%
+                CompareStrings:    71ms   126ms  -43.6%    72ms   131ms  -44.7%
+                CompareUnicode:    82ms   123ms  -33.5%    83ms   131ms  -36.7%
+                 ConcatStrings:   119ms   146ms  -18.4%   129ms   158ms  -18.4%
+                 ConcatUnicode:    90ms   109ms  -17.2%    97ms   121ms  -19.8%
+               CreateInstances:   116ms   124ms   -6.6%   118ms   127ms   -7.0%
+            CreateNewInstances:   109ms   119ms   -7.9%   113ms   121ms   -6.6%
+       CreateStringsWithConcat:    97ms   162ms  -40.3%    99ms   169ms  -41.5%
+       CreateUnicodeWithConcat:    90ms   116ms  -22.8%    97ms   122ms  -20.8%
+                  DictCreation:    87ms   122ms  -28.6%    91ms   127ms  -28.0%
+             DictWithFloatKeys:    98ms   139ms  -29.5%   105ms   148ms  -29.3%
+           DictWithIntegerKeys:    71ms   133ms  -46.7%    74ms   136ms  -46.0%
+            DictWithStringKeys:    62ms   126ms  -51.0%    64ms   128ms  -50.3%
+                      ForLoops:    68ms   135ms  -49.2%    69ms   136ms  -49.2%
+                    IfThenElse:    63ms   130ms  -51.6%    64ms   134ms  -51.9%
+                   ListSlicing:   122ms   123ms   -0.9%   126ms   125ms   +0.8%
+                NestedForLoops:    89ms   149ms  -40.2%    93ms   152ms  -38.9%
+          NormalClassAttribute:    88ms   132ms  -33.1%    95ms   134ms  -29.5%
+       NormalInstanceAttribute:    72ms   116ms  -37.9%    77ms   118ms  -34.8%
+           PythonFunctionCalls:    90ms   122ms  -26.1%    94ms   125ms  -24.7%
+             PythonMethodCalls:   117ms   144ms  -18.8%   121ms   147ms  -17.8%
+                     Recursion:   121ms   180ms  -32.6%   124ms   184ms  -32.4%
+                  SecondImport:   144ms   139ms   +3.5%   150ms   143ms   +4.8%
+           SecondPackageImport:   151ms   145ms   +3.9%   156ms   149ms   +4.3%
+         SecondSubmoduleImport:   178ms   168ms   +5.8%   186ms   176ms   +5.4%
+       SimpleComplexArithmetic:    71ms   112ms  -36.7%    76ms   123ms  -38.3%
+        SimpleDictManipulation:    77ms   139ms  -44.3%    78ms   140ms  -44.3%
+         SimpleFloatArithmetic:    61ms   124ms  -50.7%    63ms   126ms  -50.2%
+      SimpleIntFloatArithmetic:    61ms   121ms  -49.4%    62ms   123ms  -49.5%
+       SimpleIntegerArithmetic:    61ms   121ms  -49.5%    62ms   123ms  -49.8%
+        SimpleListManipulation:    58ms   116ms  -50.0%    58ms   117ms  -50.2%
+          SimpleLongArithmetic:    89ms   121ms  -26.3%    91ms   124ms  -27.0%
+                    SmallLists:    79ms   116ms  -31.8%    82ms   122ms  -32.6%
+                   SmallTuples:    91ms   117ms  -22.6%    93ms   122ms  -23.6%
+         SpecialClassAttribute:    84ms   132ms  -36.4%    93ms   134ms  -30.4%
+      SpecialInstanceAttribute:   111ms   153ms  -27.6%   114ms   155ms  -26.2%
+                StringMappings:   102ms   115ms  -11.1%   104ms   117ms  -10.9%
+              StringPredicates:   100ms   136ms  -26.7%   101ms   137ms  -26.1%
+                 StringSlicing:    79ms   114ms  -30.2%    84ms   119ms  -29.9%
+                     TryExcept:    68ms   145ms  -53.2%    69ms   148ms  -53.6%
+                TryRaiseExcept:   106ms   104ms   +2.7%   109ms   106ms   +2.8%
+                  TupleSlicing:   108ms   126ms  -14.4%   113ms   130ms  -13.0%
+               UnicodeMappings:   150ms   150ms   -0.4%   152ms   154ms   -1.7%
+             UnicodePredicates:   106ms   130ms  -18.3%   108ms   133ms  -18.3%
+             UnicodeProperties:    94ms   111ms  -15.2%    97ms   115ms  -15.5%
+                UnicodeSlicing:   101ms   130ms  -22.5%   105ms   136ms  -22.6%
+-------------------------------------------------------------------------------
+Totals:                          4750ms  6788ms  -30.0%  4929ms  7035ms  -29.9%
+
+(this=2008-10-22 13:30:28, other=../reference.pybench)
+
